@@ -1,11 +1,13 @@
-import Counter from "../components/Counter";
+import MyForm from "./MyForm";
 
-const h1Styles = { color: "red", backgroundColor: "green" };
+
 const App = () => (
   <>
-    <h1 style={h1Styles}>Hello from App</h1>
-    <Counter initialValue={0} step={1} />
+    <h1>React Forms!!!!</h1>
+    <MyForm label="Nasz formularz" formSubmissionHandler={(data) => {
+      console.log(">>> App Is Calling!!", data)
+    }} />
   </>
-);
+)
 
 export default App;
