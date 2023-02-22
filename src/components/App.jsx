@@ -1,27 +1,27 @@
-// import Button from "./Button";
-// import Counter from "./Counter";
-// const something = () => {
-//    console.log("something")
-//  }
+import { useState, useEffect } from "react";
 
-// const App = () => {
-//   <>
-//     <h1>Hello from App</h1>
-//     <Counter initialValue={1} step={10} />
-//     <Button label="Go from App" onClickAction={something} />
-//   </>
-// }
+function App() {
+  const [count, setCount] = useState(0);
 
-// export default App;
-import MyForm from "./MyForm";
+  const [student, setStudent] = useState({ name: "john", age: 25 });
+  const incrementCount = () => {
+    setCount(count + 1)
+  }
+  const updateStudentDaata = () => {
+    setStudent({
+      ...student,
+      name:"Sarah",
+    })
+  }
 
-const App = () => (
-  <>
-    <h>React Form</h>
-    <MyForm label="Nasz Formularz" formSubmissionHandler={(data) => {
-      console.log(">>>>App is calling!!!", data)
-    }} />
-  </>
-)
+  console.log(useState)
+  return (
+    <div>
+      <h1>HOOKS-count:{count}</h1>
+      <h2>Student:{student.name},age:{student.age}</h2>
+      <button onClick={incrementCount}>Increment</button>
+      <button onClick={updateStudentDaata}>Update student</button>
+    </div>
+  )
+}
 export default App;
-
