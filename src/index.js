@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from 'components/App';
 import './index.css';
+import { UserProvider } from "./contex";
+
+// const Mycontext = createContext();
+// console.log("Mycontext", Mycontext)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <UserProvider value={{username:"John"}}>
     <App />
-  </React.StrictMode>
+  </UserProvider>
 );
 
 
